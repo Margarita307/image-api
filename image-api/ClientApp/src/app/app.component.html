@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <h1>Image Upload</h1>
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="form-group">
+        <label for="selectedUploadOption">Select upload source</label>
+        <select class="form-control" id="selectedUploadOption" [(ngModel)]="selectedUploadOption">
+          <option *ngFor="let option of uploadOptions" [ngValue]="option">{{option}}</option>
+        </select>
+      </div>
+      <div *ngIf="selectedUploadOption === 'Choose files'">
+        <app-upload></app-upload>
+      </div>
+      <div *ngIf="selectedUploadOption === 'Enter URL'">
+        <app-url-upload></app-url-upload>
+      </div>
+    </div>
+  </div>
+</div>

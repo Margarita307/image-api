@@ -1,0 +1,22 @@
+<form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <input #file type="file" class="form-control-file" placeholder="Choose file" name="files" accept='image/*' (change)="onSelectedFile($event)" multiple />
+    <div style="color:red;" *ngIf="invalidMimeType">Only images are supported</div>
+  </div>
+  <button type="submit" class="btn btn-success" [disabled]="!file.files[0] || invalidMimeType">Upload</button>
+</form>
+
+<div *ngIf="uploadResponse.status === 'progress'">
+  <div class="progress" style="height: 20px;margin-bottom:20px;">
+    <div class="progress-bar" role="progressbar" [style.width.%]="uploadResponse.message" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{uploadResponse.message}}%</div>
+  </div>
+</div>
+<div *ngIf="uploadResponse.status === 'response'" style="color:green">
+  {{uploadResponse.message}}
+</div>
+<div *ngIf="uploadResponse.status === 'error'" style="color:red">
+  {{uploadResponse.message}}
+</div>
+
+<h3>Preview</h3>
+<app-preview [data]="previewDataList.data"></app-preview>

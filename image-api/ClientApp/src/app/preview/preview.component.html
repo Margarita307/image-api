@@ -1,0 +1,5 @@
+<div class="row" style="padding:13px" >
+  <div *ngFor="let image of data" class="thumbnail">
+    <img [src]="image.url" [ngClass]="{'portrait': image.width < image.height}" alt="Image" *ngIf="image && image.url && image.width && image.height">
+  </div>
+</div>
