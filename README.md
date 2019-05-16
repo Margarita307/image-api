@@ -7,7 +7,7 @@
 "FileName" : "Image.jpg",
 "ImageData" : "/9j/4AAQ...
 }.
-Образец тела запроса находится в папке TestData тестового проекта.
+Обратите внимание, что BASE64 закодированное изображение не содержит префикса data:image/jpeg;base64. Важно указать FileName, так как оно содержит расширение файла. Образец тела запроса находится в папке TestData тестового проекта.
 
 <br/>
 
@@ -20,4 +20,4 @@
 "FileName" : "Image.jpg",
 "ImageData" : "/9j/4AAQ...
 }.
-The sample request body is located in the TestData folder of the test project.
+Please, pay attention that BASE64 encoded image should not contain the data:image/jpeg;base64 prefix. FileName is important as it containes file extension. The sample request body is located in the TestData folder of the test project.
