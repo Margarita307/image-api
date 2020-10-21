@@ -1,7 +1,7 @@
 <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <input #file type="file" class="form-control-file" placeholder="Choose file" name="files" accept='image/*' (change)="onSelectedFile($event)" multiple />
-    <div style="color:red;" *ngIf="invalidMimeType">Only images are supported</div>
+    <div style="color:red;" *ngIf="invalidMimeType">Only images are supported </div>
   </div>
   <button type="submit" class="btn btn-success" [disabled]="!file.files[0] || invalidMimeType">Upload</button>
 </form>
